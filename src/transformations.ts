@@ -38,5 +38,9 @@ export function lazyloadImages(el: HTMLElement, vnode: any): void {
       vnode,
     );
     child.removeAttribute('src');
+
+    if (value) {
+      child.setAttribute('data-src', value.replace('/original/', '/resize/20/20/'));
+    }
   });
 }
